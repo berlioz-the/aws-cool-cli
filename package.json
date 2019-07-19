@@ -1,0 +1,35 @@
+{
+  "name": "aws-ec2-command-runner.git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "run-aws-ec2-command": "./bin/runner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubenhak/aws-ec2-command-runner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubenhak/aws-ec2-command-runner/issues"
+  },
+  "homepage": "https://github.com/rubenhak/aws-ec2-command-runner#readme",
+  "dependencies": {
+    "aws-sdk": "^2.495.0",
+    "command-line-args": "^5.1.1",
+    "the-lodash": "^1.0.14",
+    "the-promise": "^1.1.4"
+  }
+}
