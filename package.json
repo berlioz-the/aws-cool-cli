@@ -29,6 +29,7 @@
   "dependencies": {
     "aws-sdk": "^2.495.0",
     "command-line-args": "^5.1.1",
+    "dateformat": "^3.0.3",
     "the-lodash": "^1.0.14",
     "the-promise": "^1.1.4"
   }
