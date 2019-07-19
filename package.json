@@ -1,5 +1,5 @@
 {
-  "name": "aws-ec2-command-runner.git",
+  "name": "aws-cool-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,8 @@
     "LICENSE"
   ],
   "bin": {
-    "run-aws-ec2-command": "./bin/runner.js"
+    "aws-cool-cli-ec2-run-command": "./bin/runner.js",
+    "aws-cool-cli-s3-fetch": "./bin/s3-fetcher.js"
   },
   "repository": {
     "type": "git",
