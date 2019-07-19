@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const _ = require('the-lodash');
 const Promise = require('the-promise');
 const dateFormat = require('dateformat');
