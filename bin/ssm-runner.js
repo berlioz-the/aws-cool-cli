@@ -26,8 +26,11 @@ require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _, AW
         params.Comment = options.task;
     }
     if (options.timeout) {
-        params.TimeoutSeconds = options.timeout;
+        params.Parameters = {
+            executionTimeout: [options.timeout.toString()]
+        }
     }
+    params.TimeoutSeconds = 30;
     
     var isSucceeded = false;
     var finalStatus = '';
