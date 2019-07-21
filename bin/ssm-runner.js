@@ -6,7 +6,8 @@ const optionDefinitions = [
     { name: 'instanceId', type: String },
     { name: 'command', type: String },
     { name: 's3Bucket', type: String, optional: true },
-    { name: 'task', type: String, optional: true }
+    { name: 'task', type: String, optional: true },
+    { name: 'timeout', type: Number, optional: true }
 ]
 
 require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _, AWSClient}) => {
@@ -23,6 +24,9 @@ require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _, AW
     }
     if (options.task) {
         params.Comment = options.task;
+    }
+    if (options.timeout) {
+        params.TimeoutSeconds = options.timeout;
     }
     
     var isSucceeded = false;

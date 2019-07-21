@@ -39,10 +39,16 @@ Usage:
 aws-cool-cli-ec2-state --instanceId <id> --region <region>
 ```
 
+## Waiting SSM Agent Ready
+Usage:
+```sh
+aws-cool-cli-ssm-wait-ready --instanceId <instance-id> --region <region>
+```
+
 ## Running SSM Commands on AWS EC2 Instances
 Usage:
 ```sh
-aws-cool-cli-ec2-run-command --command <command> --instanceId <instance-id> --region <region>  --s3Bucket [log-output-s3-bucket] --task <task-name>
+aws-cool-cli-ec2-run-command --command <command> --instanceId <instance-id> --region <region> --s3Bucket [log-output-s3-bucket] --task <task-name>
 ```
 
 ## Fetching S3 File Contents
