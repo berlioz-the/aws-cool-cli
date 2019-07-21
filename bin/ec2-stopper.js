@@ -10,13 +10,9 @@ require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _}) =
     return awsClient.queryInstanceById(options.instanceId)
         .then(result => {
             console.log(`Initial State: ${result.State.Name}`);
-
-            // console.log(result);
             return awsClient.stopInstance(options.instanceId);
         })
         .then(result => {
-            console.log(result);
-
             if (options.wait) {
                 return awsClient.waitInstanceStabilize(options.instanceId);
             } else {

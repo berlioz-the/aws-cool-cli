@@ -9,10 +9,9 @@ const optionDefinitions = [
     { name: 'task', type: String, optional: true }
 ]
 
-require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _}) => {
+require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _, AWSClient}) => {
 
     var params = {
-
     }
     
     if (options.s3Bucket) {
@@ -59,37 +58,38 @@ require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _}) =
             }
 
         })
-    
-})
+  
+    function fetchAndOutput(name, url)
+    {
+        if (!url) {
+            return;
+        }
 
+        console.log();
+        console.log(`------------- ${name.toUpperCase()} OUTPUT BEGIN -------------`);
 
-function fetchAndOutput(name, url)
-{
-    if (!url) {
-        return;
+        const regex = /^https:\/\/s3\.([\w-]+).amazonaws\.com\/([\w-_]+)\/(\S+)$/;
+        var found = url.match(regex);
+        // console.log(found);
+
+        var s3Options = _.clone(options);
+        s3Options.region = found[1];
+        var awsS3Client = new AWSClient(s3Options);
+        return awsS3Client.outputS3FileContents(found[2], found[3])
+            .then(() => {
+                console.log(`-------------- ${name.toUpperCase()} OUTPUT END --------------`);
+                console.log();
+            })
+            .catch(reason => {
+                if (reason.statusCode == 404) {
+                    console.log('Output Stream Not Present');
+                    return;
+                }
+                throw reason;
+            })
+
     }
 
-    console.log();
-    console.log(`------------- ${name.toUpperCase()} OUTPUT BEGIN -------------`);
+     
+})
 
-    const regex = /^https:\/\/s3\.([\w-]+).amazonaws\.com\/([\w-_]+)\/(\S+)$/;
-    var found = url.match(regex);
-    // console.log(found);
-
-    var s3Options = _.clone(options);
-    s3Options.region = found[1];
-    var awsS3Client = new AWSClient(s3Options);
-    return awsS3Client.outputS3FileContents(found[2], found[3])
-        .then(() => {
-            console.log(`-------------- ${name.toUpperCase()} OUTPUT END --------------`);
-            console.log();
-        })
-        .catch(reason => {
-            if (reason.statusCode == 404) {
-                console.log('Output Stream Not Present');
-                return;
-            }
-            throw reason;
-        })
-
-}
