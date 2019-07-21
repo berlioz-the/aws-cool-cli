@@ -1,6 +1,6 @@
 {
   "name": "aws-cool-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple cli tool which makes some of complex AWS CLI actions very simple.",
   "main": "index.js",
   "preferGlobal": true,
@@ -33,10 +33,10 @@
   },
   "homepage": "https://github.com/rubenhak/aws-ec2-command-runner#readme",
   "dependencies": {
-    "aws-sdk": "^2.495.0",
+    "aws-sdk": "^2.496.0",
     "command-line-args": "^5.1.1",
     "dateformat": "^3.0.3",
-    "the-lodash": "^1.0.14",
+    "the-lodash": "^1.0.15",
     "the-promise": "^1.1.4"
   }
 }
