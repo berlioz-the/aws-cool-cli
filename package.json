@@ -1,6 +1,6 @@
 {
   "name": "aws-cool-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple cli tool which makes some of complex AWS CLI actions very simple.",
   "main": "index.js",
   "preferGlobal": true,
@@ -17,6 +17,9 @@
   "bin": {
     "aws-cool-cli-ec2-run-command": "./bin/runner.js",
     "aws-cool-cli-ec2-find-by-name": "./bin/ec2-finder.js",
+    "aws-cool-cli-ec2-start": "./bin/ec2-starter.js",
+    "aws-cool-cli-ec2-stop": "./bin/ec2-stopper.js",
+    "aws-cool-cli-ec2-status": "./bin/ec2-status.js",
     "aws-cool-cli-s3-fetch": "./bin/s3-fetcher.js"
   },
   "repository": {
