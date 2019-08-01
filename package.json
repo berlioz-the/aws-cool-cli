@@ -1,6 +1,6 @@
 {
   "name": "aws-cool-cli",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "A simple cli tool which makes some of complex AWS CLI actions very simple.",
   "main": "index.js",
   "preferGlobal": true,

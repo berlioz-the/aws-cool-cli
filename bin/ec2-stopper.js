@@ -7,16 +7,23 @@ const optionDefinitions = [
 
 require('../lib/runner')(optionDefinitions, ({awsClient, options, Promise, _}) => {
 
-    return awsClient.queryInstanceById(options.instanceId)
+    return awsClient.waitInstanceStabilize(options.instanceId)
         .then(result => {
             console.log(`Initial State: ${result.State.Name}`);
-            return awsClient.stopInstance(options.instanceId);
-        })
-        .then(result => {
-            if (options.wait) {
-                return awsClient.waitInstanceStabilize(options.instanceId);
-            } else {
-                return awsClient.queryInstanceById(options.instanceId);
+            if (result.State.Name == 'running')
+            {
+                return awsClient.stopInstance(options.instanceId)
+                    .then(() => {
+                        if (options.wait) {
+                            return awsClient.waitInstanceStabilize(options.instanceId);
+                        } else {
+                            return awsClient.queryInstanceById(options.instanceId);
+                        }
+                    });
+            } 
+            else 
+            {
+                return result;
             }
         })
         .then(result => {
