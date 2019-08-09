@@ -1,6 +1,6 @@
 {
   "name": "aws-cool-cli",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "A simple cli tool which makes some of complex AWS CLI actions very simple.",
   "main": "index.js",
   "preferGlobal": true,
@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rubenhak/aws-ec2-command-runner.git"
+    "url": "git+https://github.com/berlioz-the/aws-cool-cli.git"
   },
   "author": "Ruben Hakopian",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rubenhak/aws-ec2-command-runner/issues"
+    "url": "https://github.com/berlioz-the/aws-cool-cli/issues"
   },
-  "homepage": "https://github.com/rubenhak/aws-ec2-command-runner#readme",
+  "homepage": "https://github.com/berlioz-the/aws-cool-cli#readme",
   "dependencies": {
     "aws-sdk": "^2.496.0",
     "command-line-args": "^5.1.1",
