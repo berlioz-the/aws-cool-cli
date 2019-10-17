@@ -56,3 +56,21 @@ Usage:
 ```sh
 aws-cool-cli-s3-fetch --region <region> --bucket <bucket-name> --path <path>
 ```
+
+## Running SSH Commands on AWS EC2 Instances using SSH
+Usage:
+```sh
+aws-cool-cli-ec2-ssh-command --command <command> --user <user> --pk <path-to-pk-pem-file> --instanceId <instance-id> --region <region>
+```
+
+## Shutdown AWS EC2 Instances using SSH
+Usage:
+```sh
+aws-cool-cli-ec2-ssh-shutdown --user <user> --pk <path-to-pk-pem-file> --instanceId <instance-id> --region <region>
+```
+
+## Running SSH Commands on Remote Host using SSH
+Usage:
+```sh
+aws-cool-cli-ssh-command --command <command> --user <user> --host <host> --pk <path-to-pk-pem-file>
+```

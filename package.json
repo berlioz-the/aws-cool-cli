@@ -1,6 +1,6 @@
 {
   "name": "aws-cool-cli",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "A simple cli tool which makes some of complex AWS CLI actions very simple.",
   "main": "index.js",
   "preferGlobal": true,
@@ -21,7 +21,10 @@
     "aws-cool-cli-ec2-state": "./bin/ec2-state.js",
     "aws-cool-cli-s3-fetch": "./bin/s3-fetcher.js",
     "aws-cool-cli-ssm-wait-ready": "./bin/ssm-wait-ready.js",
-    "aws-cool-cli-ec2-run-command": "./bin/ssm-runner.js"
+    "aws-cool-cli-ec2-run-command": "./bin/ssm-runner.js",
+    "aws-cool-cli-ec2-ssh-command": "./bin/ec2-ssh-runner.js",
+    "aws-cool-cli-ec2-ssh-shutdown": "./bin/ec2-ssh-shutdown.js",
+    "aws-cool-cli-ssh-command": "./bin/ssh-runner.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
     "aws-sdk": "^2.496.0",
     "command-line-args": "^5.1.1",
     "dateformat": "^3.0.3",
+    "ssh2": "^0.8.5",
     "the-lodash": "^1.0.15",
     "the-promise": "^1.1.4"
   }
